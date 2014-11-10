@@ -1,14 +1,15 @@
-<p>Please enter a new note</p>
-
-<div>
-  <%= form_for(@note) do |f| %>
-
+<%= form_for :note do |f| %>
+	<p>
     <%= f.label :title %>
     <%= f.text_field :title %>
+  </p>
 
+  <p>
     <%= f.label :content %>
     <%= f.text_area :content %>
+  <p>
 
-    <%= f.submit "Create new note"%>
-  <% end %>
-</div>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
