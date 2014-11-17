@@ -30,6 +30,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
 
     if @note.update(note_params)
+      flash.notice = "Your note'#{@note.title}' has just been updated!"
       redirect_to @note
     else
       render 'edit'
@@ -40,6 +41,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.destroy
 
+    flash.notice = "Your note'#{@note.title}' has just been trashed!"
     redirect_to notes_path
   end
 
