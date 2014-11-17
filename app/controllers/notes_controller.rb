@@ -10,9 +10,11 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
-
-    @note.save
-    redirect to @note
+    if @note.save
+      redirect_to @note, notice: 'Success! You have just written a new note!' 
+    else
+      render :new 
+    end
   end
 
   private
