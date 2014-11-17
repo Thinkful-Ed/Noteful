@@ -4,5 +4,8 @@ class NotesController < ApplicationController
     @note = Note.new
   end
 
+  def index
+    notes = Note.all
+  end
   
 end
