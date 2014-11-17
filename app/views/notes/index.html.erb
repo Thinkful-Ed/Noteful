@@ -9,6 +9,8 @@
     <tr>
       <% @notes.each do |note| %>
         <td><% note.title %></td>
+        <td><%= link_to 'Show', note_path(note) %></td>
+        <td><%= link_to 'Edit', edit_note_path(note) %></td>
       <% end %>
     </tr>
   </div>
