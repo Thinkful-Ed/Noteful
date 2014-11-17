@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117155214) do
+ActiveRecord::Schema.define(version: 20141117164250) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20141117155214) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "author_id"
   end
+
+  add_index "notes", ["author_id"], name: "index_notes_on_author_id"
 
 end
