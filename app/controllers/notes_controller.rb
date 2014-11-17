@@ -10,6 +10,7 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
+
     if @note.save
       redirect_to @note, notice: 'Success! You have just written a new note!' 
     else
@@ -19,6 +20,20 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
+  end
+
+  def edit
+    @note = Note.find(params[:id])
+  end
+
+  def update
+    @note = Note.find(params[:id])
+
+    if @note.update(note_params)
+      redirect_to @note
+    else
+      render 'edit'
+    end
   end
 
   private
