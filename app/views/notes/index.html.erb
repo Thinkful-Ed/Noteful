@@ -1,22 +1,14 @@
 <h2>Check out all the notes on Noteful so far!</h2>
 
-<table>
-  <tr>
-    <th>Title</th>
-  </tr>
+<div>
+  <% @notes.each do |note| %>
+    <p><%= note.title %></p>
+    <p><%= link_to 'Show', note_path(note) %> |
+    <%= link_to 'Edit', edit_note_path(note) %> |
+    <%= link_to 'Destroy', note_path(note),
+                        method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+</div>
 
-  <div>
-    <tr>
-      <% @notes.each do |note| %>
-        <td><% note.title %></td>
-        <td><%= link_to 'Show', note_path(note) %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note_path(note),
-                            method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </tr>
-  </div>
-
-</table>
 
 
