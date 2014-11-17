@@ -1,9 +1,18 @@
-<h1>Listing all Notes on Noteful</h1>
+<h1>Check out all the notes on Noteful so far!</h1>
 
-<div>
-  <ul>
-    <% @notes.each do |note| %>
-      <li><% note.title %></li>
-    <% end %>
-  </ul>
-</div>
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+
+  <div>
+    <tr>
+      <% @notes.each do |note| %>
+        <td><% note.title %></td>
+      <% end %>
+    </tr>
+  </div>
+
+</table>
+
+
