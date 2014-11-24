@@ -3,4 +3,8 @@ class Note < ActiveRecord::Base
 
   validates :title, presence: true
   validates :content, presence: true
+
+  def preview
+    self.content.slice(0..100) << "...(readmore)"
+  end
 end
