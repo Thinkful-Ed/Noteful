@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index, :show]
   def new
     @note = Note.new
   end
@@ -12,9 +12,9 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
 
     if @note.save
-      redirect_to @note, notice: 'Success! You have just written a new note!' 
+      redirect_to @note, notice: 'Success! You have just written a new note!'
     else
-      render :new 
+      render :new
     end
   end
 
@@ -49,5 +49,5 @@ class NotesController < ApplicationController
     def note_params
       params.require(:note).permit(:title, :content)
     end
-  
+
 end
