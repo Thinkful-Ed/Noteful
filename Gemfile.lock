@@ -1,3 +1,16 @@
+GIT
+  remote: https://github.com/plataformatec/devise.git
+  revision: 1d8890b77372b9c4fd3ec8e9b4963d76774ed33c
+  branch: lm-rails-4-2
+  specs:
+    devise (3.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -55,20 +68,13 @@ GEM
     columnize (0.8.9)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
-    devise (3.4.1)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      responders
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hike (1.2.3)
     i18n (0.7.0.beta1)
-    jbuilder (2.2.4)
+    jbuilder (2.2.5)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.0.beta2)
@@ -82,7 +88,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     mini_portile (0.6.1)
-    minitest (5.4.2)
+    minitest (5.4.3)
     multi_json (1.10.1)
     nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
@@ -117,9 +123,9 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
-    responders (1.1.1)
-      railties (>= 3.2, < 4.2)
-    sass (3.4.7)
+    responders (2.0.2)
+      railties (>= 4.2.0.alpha, < 5)
+    sass (3.4.8)
     sass-rails (5.0.0.beta1)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.2)
@@ -129,7 +135,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     slop (3.6.0)
-    spring (1.1.3)
+    spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -164,7 +170,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
-  devise
+  devise!
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.0.beta2)
   rails (= 4.2.0.beta4)
