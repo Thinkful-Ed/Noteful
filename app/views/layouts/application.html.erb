@@ -8,6 +8,13 @@
 </head>
 <body>
 
+  <nav>
+    <ul>
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      <li><%= link_to "Log In", new_user_session_path %></li>
+    </ul>
+  </nav>
+  
   <p class="flash"><%= flash.notice %></p>
 
   <%= yield %>
