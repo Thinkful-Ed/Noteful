@@ -8,9 +8,9 @@
 </head>
 <body>
 
-  <div>
-    <nav>
-      <ul class="center">
+  <div class='main'>
+    <nav class='clearfix'>
+      <ul class="pull-right">
         <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete%></li>
@@ -20,7 +20,7 @@
         <% end %>
       </ul>
     </nav>
-    <div>
+    <div class='content'>
       <p class="flash"><%= flash.notice %></p>
       <%= yield %>
      </div>
