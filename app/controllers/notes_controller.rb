@@ -1,25 +1,25 @@
 class NotesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
   def new
     @note = Note.new
   end
 
   def index
-    @notes = Note.all
+    @notes = current_user.notes.sorted
   end
 
   def create
     @note = current_user.notes.new(note_params)
 
     if @note.save
-      redirect_to @note, notice: 'Success! You have just written a new note!'
+      redirect_to notes_path, notice: 'Success! You have just written a new note!'
     else
       render :new
     end
   end
 
   def show
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
   end
 
   def edit
@@ -41,7 +41,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.destroy
 
-    flash.notice = "Your note'#{@note.title}' has just been trashed!"
+    flash.notice = "Your note has just been trashed!"
     redirect_to notes_path
   end
 

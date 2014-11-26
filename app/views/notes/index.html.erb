@@ -1,12 +1,18 @@
-<h2>Check out all the notes on Noteful so far!</h2>
+<h1 class="center">Welcome to Noteful</h1>
+<p class="center">Take notes online and access them from anywhere!</p>
+
+<div class='pull-right'>
+  <%= link_to "Add a note", new_note_path %>
+</div>
 
 <div>
   <% @notes.each do |note| %>
-    <p><%= note.title %></p>
-    <p><%= note.preview %></p>
-    <p><%= link_to 'Show', note_path(note) %> |
-    <%= link_to 'Edit', edit_note_path(note) %> |
-    <%= link_to 'Destroy', note_path(note),
-                        method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <%= div_for note do %>
+      <h2><%= note.title %></h2>
+      <p><%= note.content %></p>
+      <p><%= link_to 'Show', note_path(note) %> |
+        <%= link_to 'Edit', edit_note_path(note) %> |
+        <%= link_to 'Destroy', note_path(note), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% end %>
   <% end %>
 </div>
