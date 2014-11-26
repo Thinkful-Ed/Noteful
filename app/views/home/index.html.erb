@@ -4,5 +4,5 @@
 <% if current_user %>
   Check out <%= link_to "all your notes", notes_path %>
 <% else %>
-  Sign in the start creating notes
+  <%= link_to "Sign in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> to start creating notes
 <% end %>

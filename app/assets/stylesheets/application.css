@@ -67,13 +67,13 @@ nav ul li a:hover {
 }
 .button {
   text-decoration:none;
-  border:1px solid black;
+  border: 1px solid rgb(132, 132, 132);
   border-radius: 3px;
   padding:6px;
   background-color:inherit;
   font-size:14px;
   font-weight:bold;
-  color:black;
+  color: rgb(70, 69, 69);
   display:inline-block;
   margin: 5px;
 }
